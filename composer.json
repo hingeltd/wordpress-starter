@@ -1,9 +1,9 @@
 {
-  "name": "hingeltd/wordpress",
+  "name": "hingeltd/wordpress-starter",
   "type": "project",
   "license": "MIT",
-  "description": "WordPress boilerplate with bedrock, lumberjack, laravel mix on docker",
-  "homepage": "https://hinge.agency/",
+  "description": "WordPress boilerplate with Bedrock, Lumberjack, Laravel mix on Docker",
+  "homepage": "https://github.com/hingeltd/wordpress-starter/",
   "authors": [
     {
       "name": "Hinge",
@@ -15,8 +15,7 @@
     "bedrock", "composer", "boilerplate", "docker", "wordpress", "wp", "wp-config"
   ],
   "support": {
-    "issues": "https://hinge.agency/",
-    "forum": "https://hinge.agency/"
+    "issues": "https://github.com/hingeltd/wordpress-starter/issues"
   },
   "config": {
     "preferred-install": "dist"
