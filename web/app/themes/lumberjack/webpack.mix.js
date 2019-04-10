@@ -1,4 +1,5 @@
 let mix = require('laravel-mix');
+let path = require('path');
 
 /*
  |--------------------------------------------------------------------------
@@ -11,9 +12,30 @@ let mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'dist/')
-    .sass('resources/sass/app.scss', 'dist/')
-    .copy('resources/img', 'dist/img', false);
+mix.setPublicPath('/')
+  .js('resources/js/app.js', 'dist/')
+  .sass('resources/sass/app.scss', 'dist/')
+  .copy('resources/img', 'dist/img', false)
+  .browserSync({
+    proxy: 'localhost',
+    files: [
+      "**/*.css",
+      "**/*.php",
+      "**/*.twig",
+      "**/*.js"
+    ],
+    open: false
+  })
+  .sourceMaps()
+  .webpackConfig({
+    devtool: 'source-map',
+    resolve: {
+      alias: {
+        'vue$': mix.inProduction() ? 'vue/dist/vue.min.js' : 'vue/dist/vue.js'
+      }
+    }
+  })
+  .version();
 
 // Full API
 // mix.js(src, output);
