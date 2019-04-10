@@ -1,0 +1,32 @@
+{% extends "base.twig" %}
+
+{% block content %}
+    <main>
+        <div class="columns">
+            <div class="column">
+                <h1>{{ title }}</h1>
+
+                <div class="mb-2">
+                    {{ content|raw }}
+                </div>
+
+                {% if posts|length > 0 %}
+                    <ul class="posts">
+                        {% for post in posts %}
+                            <li class="posts__item">
+                                <article class="post">
+                                    <h1><a href="{{ post.link }}">{{ post.title }}</a></h1>
+                                    <div>
+                                        {{ post.content|raw }}
+                                    </div>
+                                </article>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>No results found.</p>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock %}
