@@ -1,4 +1,4 @@
-# [Hinge Wordpress]()
+# [Hinge Wordpress](https://github.com/hingeltd/wordpress-starter)
 
 This repository is a boilerplate for setting up a Wordpress project on a Mac or Linux host machine and is based on the following stack:
 
@@ -20,7 +20,7 @@ This repository is a boilerplate for setting up a Wordpress project on a Mac or 
 
 - Create a new project:
     ```sh
-    $ composer create-project hingeltd/wordpress
+    $ composer create-project hingeltd/wordpress-starter
     ```
 - Run the following command to setup docker containers for your project. Unless the .env details are change as per the following step, make sure that ```PORT 80``` and ```PORT 3306``` is not being currently used by any other services 
     ```sh
@@ -37,7 +37,7 @@ This repository is a boilerplate for setting up a Wordpress project on a Mac or 
   * `WP_SITEURL` - Full URL to WordPress including subdirectory (https://example.com/wp)
   * `AUTH_KEY`, `SECURE_AUTH_KEY`, `LOGGED_IN_KEY`, `NONCE_KEY`, `AUTH_SALT`, `SECURE_AUTH_SALT`, `LOGGED_IN_SALT`, `NONCE_SALT`
     * Generate with [wp-cli-dotenv-command](https://github.com/aaemnnosttv/wp-cli-dotenv-command)
-    * Generate with [our WordPress salts generator](https://roots.io/salts.html)
+    * Generate with [Roots WordPress salts generator](https://roots.io/salts.html)
   * `MYSQL_PORT` - Docker Mysql Container port
   * `WEB_PORT` - Docker Web Server (nginx) port if you want to use any other port than port 80. If you use any other port, make sure to change the ```WP_HOME``` from ```http://localhost``` to ```http://localhost:PORT```
 - Rebuild the container if the `.env` variables is updated with the following command
