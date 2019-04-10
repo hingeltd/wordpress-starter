@@ -26,6 +26,16 @@ This repository is a boilerplate for setting up a Wordpress project on a Mac or 
     ```sh
         $ docker-compose up -d
     ```
+- Install the npm packages with the following command on the Lumberjack root at ```web/app/themes/lumberjack/```
+
+  ```sh 
+   $ npm install
+  ```
+  
+- Run a dev build on the same directory to have the theme assets built for frontend
+  ```sh 
+   $ npm run dev
+  ```
 - Initial variables are already setup to be used both by Wordpress and docker but you can update environment variables in the `.env` file:
   * Database variables
     * `DB_NAME` - Database name
@@ -41,6 +51,6 @@ This repository is a boilerplate for setting up a Wordpress project on a Mac or 
   * `MYSQL_PORT` - Docker Mysql Container port
   * `WEB_PORT` - Docker Web Server (nginx) port if you want to use any other port than port 80. If you use any other port, make sure to change the ```WP_HOME``` from ```http://localhost``` to ```http://localhost:PORT```
 - Rebuild the container if the `.env` variables is updated with the following command
-  ```sh docker-compose up --build``` 
+  ```sh $ docker-compose up --build``` 
 - Setup Wordpress locally following the standard wordpress installation steps or import an existing database locally to skip this step.
 - Access the Wordpress site at [http://localhost](http://localhost) and access WordPress admin at [http://localhost/wp/wp-admin/](http://localhost/wp/wp-admin/)
